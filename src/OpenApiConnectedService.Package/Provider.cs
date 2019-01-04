@@ -1,30 +1,44 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Interop;
+using System.Windows.Media.Imaging;
 using Microsoft.VisualStudio.ConnectedServices;
+using OpenApiConnectedService.Package.Properties;
 
 namespace OpenApiConnectedService.Package
 {
-    [ConnectedServiceProviderExport("Contoso.SampleService")]
+    [ConnectedServiceProviderExport(Constants.ProviderId)]
     internal class Provider : ConnectedServiceProvider
     {
         public Provider()
         {
-            this.Category = "Sample";
-            this.Name = "Sample Connected Service";
-            this.Description = "A sample Connected Services";
-            this.Icon = null;
-            this.CreatedBy = "Contoso";
-            this.Version = new Version(1, 0, 0);
-            this.MoreInfoUri = new Uri("https://aka.ms/ConnectedServicesSDK");
+            Category = Constants.ExtensionCategory;
+            Name = Constants.ExtensionName;
+            Description = Constants.ExtensionDescription;
+            Icon = Imaging.CreateBitmapSourceFromHBitmap(
+                Resources.Icon32x32.GetHbitmap(),
+                IntPtr.Zero,
+                Int32Rect.Empty,
+                BitmapSizeOptions.FromWidthAndHeight(32, 32)
+            );
+            CreatedBy = Constants.Author;
+            Version = new Version(1, 0, 0, 0);
+            Version = typeof(Provider).Assembly.GetName().Version;
+            MoreInfoUri = new Uri(Constants.Website);
         }
 
         public override Task<ConnectedServiceConfigurator> CreateConfiguratorAsync(ConnectedServiceProviderContext context)
         {
             ConnectedServiceConfigurator configurator = new ViewModels.SinglePageViewModel();
             return Task.FromResult(configurator);
+        }
+
+        public override IEnumerable<Tuple<string, Uri>> GetSupportedTechnologyLinks()
+        {
+            yield return Tuple.Create("OpenAPI (Swagger)", new Uri("https://swagger.io/docs/specification/about/"));
+            yield return Tuple.Create("NSwag", new Uri("https://github.com/RSuter/NSwag"));
         }
     }
 }

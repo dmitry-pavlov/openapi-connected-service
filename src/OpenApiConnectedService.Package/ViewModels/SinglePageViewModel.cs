@@ -13,7 +13,7 @@ namespace OpenApiConnectedService.Package.ViewModels
         {
             this.View = new Views.SinglePageView();
             this.View.DataContext = this;
-            this.Title = "Contoso Sample Provider";
+            this.Title = Constants.ExtensionName;
             this.Description = "Configure the Contoso Service";
             this.PropertyChanged += SinglePageViewModel_PropertyChanged;
         }

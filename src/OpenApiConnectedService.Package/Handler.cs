@@ -5,15 +5,18 @@ using Microsoft.VisualStudio.ConnectedServices;
 
 namespace OpenApiConnectedService.Package
 {
-    [ConnectedServiceHandlerExport("Contoso.SampleService", AppliesTo = "CSharp+Web")]
+    [ConnectedServiceHandlerExport(Constants.ProviderId, AppliesTo = "CSharp+Web")]
     internal class Handler : ConnectedServiceHandler
     {
         public override Task<AddServiceInstanceResult> AddServiceInstanceAsync(ConnectedServiceHandlerContext context,
             CancellationToken ct)
         {
-            AddServiceInstanceResult result = new AddServiceInstanceResult(
-                "Sample",
-                new Uri("https://github.com/Microsoft/ConnectedServicesSdkSamples"));
+            var serviceInstance = context.ServiceInstance;
+
+            var result = new AddServiceInstanceResult(
+                serviceInstance.Name,
+                new Uri(Constants.Website));
+
             return Task.FromResult(result);
         }
     }
