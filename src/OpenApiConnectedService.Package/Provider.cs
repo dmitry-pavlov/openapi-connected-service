@@ -31,8 +31,7 @@ namespace OpenApiConnectedService.Package
 
         public override Task<ConnectedServiceConfigurator> CreateConfiguratorAsync(ConnectedServiceProviderContext context)
         {
-            ConnectedServiceConfigurator configurator = new ViewModels.SinglePageViewModel();
-            return Task.FromResult(configurator);
+            return Task.FromResult<ConnectedServiceConfigurator>(new Wizard(context));
         }
 
         public override IEnumerable<Tuple<string, Uri>> GetSupportedTechnologyLinks()

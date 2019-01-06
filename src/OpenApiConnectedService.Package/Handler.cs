@@ -8,16 +8,23 @@ namespace OpenApiConnectedService.Package
     [ConnectedServiceHandlerExport(Constants.ProviderId, AppliesTo = "CSharp+Web")]
     internal class Handler : ConnectedServiceHandler
     {
-        public override Task<AddServiceInstanceResult> AddServiceInstanceAsync(ConnectedServiceHandlerContext context,
+        public override async Task<AddServiceInstanceResult> AddServiceInstanceAsync(ConnectedServiceHandlerContext context,
             CancellationToken ct)
         {
-            var serviceInstance = context.ServiceInstance;
+            await GenerateAsync(context);
 
-            var result = new AddServiceInstanceResult(
-                serviceInstance.Name,
-                new Uri(Constants.Website));
+            var folderName = context.ServiceInstance.Name;
+            var gettingStartedUrl = new Uri(Constants.Website);
+            var result = new AddServiceInstanceResult(folderName, gettingStartedUrl);
 
-            return Task.FromResult(result);
+            return result;
+        }
+
+        private async Task GenerateAsync(ConnectedServiceHandlerContext context)
+        {
+            var instance = (Instance) context.ServiceInstance;
+
+            await context.Logger.WriteMessageAsync(LoggerMessageCategory.Information, $"Generating {instance.Name} from {instance.ServiceUri}");
         }
     }
 }

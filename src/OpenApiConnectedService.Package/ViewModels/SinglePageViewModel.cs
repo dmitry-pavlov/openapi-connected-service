@@ -11,7 +11,7 @@ namespace OpenApiConnectedService.Package.ViewModels
     {
         public SinglePageViewModel()
         {
-            this.View = new Views.SinglePageView();
+            this.View = new Views.ServiceEndpointWizardPageView();
             this.View.DataContext = this;
             this.Title = Constants.ExtensionName;
             this.Description = "Configure the Contoso Service";

@@ -46,6 +46,7 @@
   <ItemGroup>
     <Compile Include="Constants.cs" />
     <Compile Include="Handler.cs" />
+    <Compile Include="Instance.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -53,10 +54,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Provider.cs" />
+    <Compile Include="ViewModels\ServiceEndpointWizardPage.cs" />
     <Compile Include="ViewModels\SinglePageViewModel.cs" />
-    <Compile Include="Views\SinglePageView.xaml.cs">
-      <DependentUpon>SinglePageView.xaml</DependentUpon>
+    <Compile Include="Views\ServiceEndpointWizardPageView.xaml.cs">
+      <DependentUpon>ServiceEndpointWizardPageView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Wizard.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -98,7 +101,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Page Include="Views\SinglePageView.xaml">
+    <Page Include="Views\ServiceEndpointWizardPageView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
