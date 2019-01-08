@@ -1,4 +1,5 @@
-﻿using EnvDTE;
+﻿using System.Collections.Generic;
+using EnvDTE;
 using Microsoft.VisualStudio;
 using Microsoft.VisualStudio.Shell.Interop;
 
@@ -22,6 +23,16 @@ namespace OpenApiConnectedService.Package.Utilities
         public static string GetNameSpace(this Project project)
         {
             return project.Properties.Item("DefaultNamespace").Value.ToString();
+        }
+
+        public static string GetServiceFolderPath(this Project project, string serviceName)
+        {
+            var servicePath = project.ProjectItems
+                .Item("Connected Services").ProjectItems
+                .Item(serviceName).Properties
+                .Item("FullPath").Value.ToString();
+
+            return servicePath;
         }
     }
 }

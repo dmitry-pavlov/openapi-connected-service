@@ -10,7 +10,7 @@ using OpenApiConnectedService.Package.Utilities;
 
 namespace OpenApiConnectedService.Package
 {
-    [ConnectedServiceHandlerExport(Constants.ProviderId, AppliesTo = "CSharp+Web")]
+    [ConnectedServiceHandlerExport(Constants.ProviderId, AppliesTo = "CSharp")]
     internal class Handler : ConnectedServiceHandler
     {
         public override async Task<AddServiceInstanceResult> AddServiceInstanceAsync(ConnectedServiceHandlerContext context,
@@ -30,10 +30,25 @@ namespace OpenApiConnectedService.Package
             var instance = (Instance) context.ServiceInstance;
 
             await context.Logger.WriteMessageAsync(LoggerMessageCategory.Information, $"Generating {instance.Name} from {instance.ServiceUri}");
+            var nswagFilePath = await GenerateNswagFileAsync(context, instance);
+            await context.Logger.WriteMessageAsync(LoggerMessageCategory.Information, $"Generated {nswagFilePath}");
 
-            var path = await GenerateNswagFileAsync(context, instance);
+            await context.Logger.WriteMessageAsync(LoggerMessageCategory.Information, $"Generating {instance.Name}Client.Generated.cs from {Path.GetFileName(nswagFilePath)}");
+            var csharpFilepath = await GenerateCSharpFileAsync(context, instance);
+            await context.Logger.WriteMessageAsync(LoggerMessageCategory.Information, $"Generated {csharpFilepath}");
+        }
 
-            await context.Logger.WriteMessageAsync(LoggerMessageCategory.Information, $"Generated {path}");
+        private async Task<string> GenerateCSharpFileAsync(ConnectedServiceHandlerContext context, Instance instance)
+        {
+            var serviceFolder = instance.Name;
+            var folderPath = context.ProjectHierarchy.GetProject().GetServiceFolderPath(serviceFolder);
+            var nswagFilePath = Path.Combine(folderPath, $"{serviceFolder}.nswag");
+            var document = await NSwagDocument.LoadAsync(nswagFilePath);
+            await document.ExecuteAsync();
+            var generatedFilePath = document.CodeGenerators.SwaggerToCSharpClientCommand.OutputFilePath;
+            var generatedFullPath = Path.Combine(folderPath, generatedFilePath);
+            await context.HandlerHelper.AddFileAsync(generatedFullPath, generatedFilePath);
+            return generatedFilePath;
         }
 
         private async Task<string> GenerateNswagFileAsync(ConnectedServiceHandlerContext context, Instance instance)
@@ -42,25 +57,27 @@ namespace OpenApiConnectedService.Package
             var serviceFolder = instance.Name;
             var serviceUrl = instance.ServiceUri;
 
-            var doc = NSwagDocument.Create();
-            doc.CodeGenerators.SwaggerToCSharpClientCommand = new SwaggerToCSharpClientCommand
+            var document = NSwagDocument.Create();
+            document.CodeGenerators.SwaggerToCSharpClientCommand = new SwaggerToCSharpClientCommand
             {
                 OutputFilePath = $"{serviceFolder}Client.Generated.cs",
                 ClassName = $"{serviceFolder}Client",
                 Namespace = $"{nameSpace}.{serviceFolder}"
             };
-            doc.SelectedSwaggerGenerator = new FromSwaggerCommand
+            document.SelectedSwaggerGenerator = new FromSwaggerCommand
             {
                 OutputFilePath = $"{serviceFolder}.nswag.json",
                 Url = serviceUrl
             };
-            var json = doc.ToJson();
+            var json = document.ToJson();
 
             var tempFileName = Path.GetTempFileName();
             File.WriteAllText(tempFileName, json);
 
             var targetPath = Path.Combine("Connected Services", serviceFolder, $"{serviceFolder}.nswag");
-            return await context.HandlerHelper.AddFileAsync(tempFileName, targetPath);
+            var nswagFilePath = await context.HandlerHelper.AddFileAsync(tempFileName, targetPath);
+
+            return nswagFilePath;
         }
     }
 }
