@@ -18,8 +18,5 @@
             <Label Content="_Name:" Target="{Binding ElementName=ServiceNameTextBox}" />
             <TextBox  Name="ServiceNameTextBox" Text="{Binding Path=ServiceName}"></TextBox>
         </StackPanel>
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-            <Button Width="70">_Go</Button>
-        </StackPanel>
     </StackPanel>
 </UserControl>

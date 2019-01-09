@@ -25,10 +25,10 @@ namespace OpenApiConnectedService.Package.Utilities
             return project.Properties.Item("DefaultNamespace").Value.ToString();
         }
 
-        public static string GetServiceFolderPath(this Project project, string serviceName)
+        public static string GetServiceFolderPath(this Project project, string rootFolder, string serviceName)
         {
             var servicePath = project.ProjectItems
-                .Item("Connected Services").ProjectItems
+                .Item(rootFolder).ProjectItems
                 .Item(serviceName).Properties
                 .Item("FullPath").Value.ToString();
 
