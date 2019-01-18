@@ -2,8 +2,8 @@
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
     <Metadata>
         <Identity Id="DmitryPavlov.OpenApiConnectedService.13263952-2019-0101-2017-BA783BFD905A" Version="1.0" Language="en-US" Publisher="Dmitry Pavlov" />
-        <DisplayName>OpenAPI Connected Service</DisplayName>
-        <Description>Connected service for Visual Studio 2017 to generate OpenAPI web service reference.</Description>
+        <DisplayName>OpenAPI (Swagger) Connected Service</DisplayName>
+        <Description>Connected service for Visual Studio 2017 to generate OpenAPI (Swagger API) web service reference.</Description>
         <MoreInfo>https://github.com/dmitry-pavlov/openapi-connected-service</MoreInfo>
         <License>Resources\EULA.txt</License>
         <GettingStartedGuide>https://github.com/dmitry-pavlov/openapi-connected-service/blob/master/README.MD</GettingStartedGuide>
