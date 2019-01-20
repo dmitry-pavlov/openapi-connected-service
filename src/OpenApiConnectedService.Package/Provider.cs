@@ -9,7 +9,7 @@ using OpenApiConnectedService.Package.Properties;
 
 namespace OpenApiConnectedService.Package
 {
-    [ConnectedServiceProviderExport(Constants.ProviderId)]
+    [ConnectedServiceProviderExport(Constants.ProviderId, SupportsUpdate = true)]
     internal class Provider : ConnectedServiceProvider
     {
         public Provider()

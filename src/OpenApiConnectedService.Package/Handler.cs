@@ -33,6 +33,17 @@ namespace OpenApiConnectedService.Package
             return result;
         }
 
+        public override async Task<UpdateServiceInstanceResult> UpdateServiceInstanceAsync(ConnectedServiceHandlerContext context, CancellationToken cancellationToken)
+        {
+            var instance = (Instance) context.ServiceInstance;
+            await context.Logger.WriteMessageAsync(LoggerMessageCategory.Information, $"Re-generating code for {instance.ServiceUri}");
+
+            var nswagFilePath = await ReGenerateCSharpFileAsync(context, instance);
+            await context.Logger.WriteMessageAsync(LoggerMessageCategory.Information, $"Re-generated code based on {nswagFilePath}");
+
+            return await base.UpdateServiceInstanceAsync(context, cancellationToken);
+        }
+
         private async Task<string> GenerateCSharpFileAsync(ConnectedServiceHandlerContext context, Instance instance)
         {
             var serviceFolder = instance.Name;
@@ -76,6 +87,18 @@ namespace OpenApiConnectedService.Package
             var targetPath = Path.Combine(rootFolder, serviceFolder, $"{serviceFolder}.nswag");
             var nswagFilePath = await context.HandlerHelper.AddFileAsync(tempFileName, targetPath);
 
+            return nswagFilePath;
+        }
+
+        private async Task<string> ReGenerateCSharpFileAsync(ConnectedServiceHandlerContext context, Instance instance)
+        {
+            var serviceFolder = instance.Name;
+            var rootFolder = context.HandlerHelper.GetServiceArtifactsRootFolder();
+            var folderPath = context.ProjectHierarchy.GetProject().GetServiceFolderPath(rootFolder, serviceFolder);
+
+            var nswagFilePath = Path.Combine(folderPath, $"{serviceFolder}.nswag");
+            var document = await NSwagDocument.LoadAsync(nswagFilePath);
+            await document.ExecuteAsync();
             return nswagFilePath;
         }
     }
