@@ -57,7 +57,10 @@
     <Compile Include="Provider.cs" />
     <Compile Include="Utilities\ProjectHelper.cs" />
     <Compile Include="ViewModels\ServiceEndpointWizardPage.cs" />
-    <Compile Include="ViewModels\SinglePageViewModel.cs" />
+    <Compile Include="ViewModels\SettingsWizardPage.cs" />
+    <Compile Include="Views\SettingsWizardPageView.xaml.cs">
+      <DependentUpon>SettingsWizardPageView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\ServiceEndpointWizardPageView.xaml.cs">
       <DependentUpon>ServiceEndpointWizardPageView.xaml</DependentUpon>
     </Compile>
@@ -98,6 +101,10 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Views\SettingsWizardPageView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Views\ServiceEndpointWizardPageView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

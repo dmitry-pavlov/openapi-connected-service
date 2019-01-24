@@ -18,6 +18,10 @@ namespace OpenApiConnectedService.Package
             CancellationToken cancellationToken)
         {
             var instance = (Instance) context.ServiceInstance;
+
+           // await context.Logger.WriteMessageAsync(LoggerMessageCategory.Information, "Checking prerequisites...");
+           // await CheckingPrerequisitesAsync(context, instance);
+
             await context.Logger.WriteMessageAsync(LoggerMessageCategory.Information, $"Generating code for {instance.ServiceUri}");
 
             var nswagFilePath = await GenerateNswagFileAsync(context, instance);
@@ -31,6 +35,11 @@ namespace OpenApiConnectedService.Package
             var result = new AddServiceInstanceResult(folderName, gettingStartedUrl);
 
             return result;
+        }
+
+        private async Task CheckingPrerequisitesAsync(ConnectedServiceHandlerContext context, Instance instance)
+        {
+           
         }
 
         public override async Task<UpdateServiceInstanceResult> UpdateServiceInstanceAsync(ConnectedServiceHandlerContext context, CancellationToken cancellationToken)

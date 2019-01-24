@@ -16,6 +16,7 @@ namespace OpenApiConnectedService.Package
             Context = context;
 
             Pages.Add(new ServiceEndpointWizardPage(Context));
+            Pages.Add(new SettingsWizardPage(Context));
 
             foreach (var page in Pages)
             {
