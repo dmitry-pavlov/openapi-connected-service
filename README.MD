@@ -2,6 +2,7 @@
 
 # Getting Started
 
+![Adding OpenAPI (Swagger) Connected Service from Visual Studio Marketplace](docs/img/OpenAPI-Swagger-Connected-Service.gif)
 
 # Upcoming HowTos
 - [ ] How to open *.nswag files with NSwagStudio from Solution Explorer
