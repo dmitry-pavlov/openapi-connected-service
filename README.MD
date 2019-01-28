@@ -2,6 +2,8 @@
 
 # Getting Started
 
+Install from `Tools and Extensions` menu inside Visual Studio 2017 or [download](https://marketplace.visualstudio.com/items?itemName=dmitry-pavlov.OpenAPIConnectedService)  as `VSIX` package from Visual Studio Marketplace
+
 ![Adding OpenAPI (Swagger) Connected Service from Visual Studio Marketplace](docs/img/OpenAPI-Swagger-Connected-Service.gif)
 
 # Upcoming HowTos
