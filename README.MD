@@ -10,3 +10,7 @@
 
 # Roadmap
 See the [changelog](docs/CHANGELOG.MD) for the further development plans and version history.
+
+# Feedback
+Please feel free to [request a feature](https://github.com/dmitry-pavlov/openapi-connected-service/issues/new?title=FEATURE) or [report a bug](https://github.com/dmitry-pavlov/openapi-connected-service/issues/new?title=BUG).
+
