@@ -53,8 +53,13 @@ namespace OpenApiConnectedService.Package.ViewModels
             {
                 if (key != null)
                 {
-                    var openCommand = key.GetValue(null).ToString();
-                    var commandParts = openCommand.Split(new[] {'"'}, StringSplitOptions.RemoveEmptyEntries);
+                    var commandParts = key
+                        .GetValue(null)
+                        .ToString()
+                        .Split(new[] {'"'}, StringSplitOptions.RemoveEmptyEntries)
+                        .Where(part => !string.IsNullOrWhiteSpace(part))
+                        .ToArray();
+
                     if (commandParts.Length == 2)
                     {
                         var exeFullPath = commandParts.First();

@@ -128,7 +128,7 @@
       <Version>7.10.6072</Version>
     </PackageReference>
     <PackageReference Include="NSwag.Commands">
-      <Version>12.0.11</Version>
+      <Version>12.0.13</Version>
     </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
