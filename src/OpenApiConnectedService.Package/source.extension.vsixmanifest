@@ -1,9 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
     <Metadata>
-        <Identity Id="OpenApiConnectedService.Package.2a4a83ac-60c8-4539-845f-a2dda1aa126e" Version="1.0" Language="en-US" Publisher="Dmitry Pavlov" />
-        <DisplayName>OpenApiConnectedService.Package</DisplayName>
-        <Description>Empty VSIX Project.</Description>
+        <Identity Id="DmitryPavlov.OpenApiConnectedService.13263952-1111-3333-2017-BA783BFD905A" Version="1.1" Language="en-US" Publisher="Dmitry Pavlov" />
+        <DisplayName>OpenAPI (Swagger) Connected Service</DisplayName>
+        <Description>Connected service for Visual Studio 2017 to generate OpenAPI (Swagger) web service reference.</Description>
+        <MoreInfo>https://github.com/dmitry-pavlov/openapi-connected-service</MoreInfo>
+        <License>Resources\EULA.txt</License>
+        <GettingStartedGuide>https://github.com/dmitry-pavlov/openapi-connected-service/blob/master/README.MD</GettingStartedGuide>
+        <ReleaseNotes>https://github.com/dmitry-pavlov/openapi-connected-service/blob/master/docs/CHANGELOG.MD</ReleaseNotes>
+        <Icon>Resources\logo_128x128.png</Icon>
+        <PreviewImage>Resources\preview_200x200.png</PreviewImage>
+        <Tags>OpenAPI, Swagger, REST API, OAS, OAI, Web API, .NET Core, HttpClient, Swashbuckle, NSwag, NSwagStudio, Code Generation, Scaffolding</Tags>
     </Metadata>
     <Installation>
         <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[15.0, 16.0)" />
