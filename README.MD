@@ -8,3 +8,5 @@
 - [ ] How to open *.nswag files with NSwagStudio from Solution Explorer
 - [ ] How to add generated HttpClient to ASP.NET Core Startup class
 
+# Roadmap
+See the [changelog](docs/CHANGELOG.MD) for the further development plans and version history.
