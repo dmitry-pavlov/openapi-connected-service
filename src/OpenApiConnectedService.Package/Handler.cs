@@ -80,7 +80,7 @@ namespace OpenApiConnectedService.Package
             document.CodeGenerators.SwaggerToCSharpClientCommand = new SwaggerToCSharpClientCommand
             {
                 OutputFilePath = $"{serviceFolder}Client.Generated.cs",
-                ClassName = $"{serviceFolder}Client",
+                ClassName = "{controller}Client",
                 Namespace = $"{nameSpace}.{serviceFolder}"
             };
             document.SelectedSwaggerGenerator = new FromSwaggerCommand
