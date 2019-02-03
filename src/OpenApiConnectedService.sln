@@ -6,6 +6,7 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E827C13D-C7A0-47B8-BD42-8B176BCCA737}"
 	ProjectSection(SolutionItems) = preProject
 		..\docs\CHANGELOG.MD = ..\docs\CHANGELOG.MD
+		..\docs\How-to-Add-Generated-HttpClient-to-ASPNETCore-Dependency-Injection.MD = ..\docs\How-to-Add-Generated-HttpClient-to-ASPNETCore-Dependency-Injection.MD
 		..\docs\img\OpenAPI-Swagger-Connected-Service.gif = ..\docs\img\OpenAPI-Swagger-Connected-Service.gif
 		..\README.MD = ..\README.MD
 	EndProjectSection

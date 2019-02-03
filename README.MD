@@ -6,9 +6,9 @@ Install from `Tools -> Extensions and Updates` menu inside Visual Studio 2017 or
 
 ![Adding OpenAPI (Swagger) Connected Service from Visual Studio Marketplace](docs/img/OpenAPI-Swagger-Connected-Service.gif)
 
-# Upcoming HowTos
+# HowTos
 - [ ] How to open *.nswag files with NSwagStudio from Solution Explorer
-- [ ] How to add generated HttpClient to ASP.NET Core Startup class
+- [x] [How to add generated HttpClient to ASP.NET Core dependency injection (DI)](docs/How-to-Add-Generated-HttpClient-to-ASPNETCore-Dependency-Injection.MD)
 
 # Troubleshooting
 ## Generated code compilation errors
