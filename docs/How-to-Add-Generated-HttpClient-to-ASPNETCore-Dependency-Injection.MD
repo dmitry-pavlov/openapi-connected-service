@@ -18,7 +18,7 @@ namespace Samples.AspNetCoreMvc.ClientInjectedToStartup.PetStore
     {
         // Note: let's implement the interface methods we want to expose
 
-        public async Task<int> GetSoldPetsCount()
+        public async Task<int> GetSoldPetsCountAsync()
         {
             ICollection<Pet> soldPets = await this.FindPetsByStatusAsync(new[] { Anonymous.Sold });
             return soldPets.Count;
@@ -29,7 +29,7 @@ namespace Samples.AspNetCoreMvc.ClientInjectedToStartup.PetStore
     public interface IPetStoreClient
     {
         /// <summary>Returns number of all sold pets in the store.</summary>
-        Task<int> GetSoldPetsCount();
+        Task<int> GetSoldPetsCountAsync();
 
         // NOTE: you can also define here methods from generated Client partial class to expose them from interface.
     }
@@ -60,9 +60,9 @@ public class HomeController : Controller
         _petStoreClient = petStoreClient;
     }
 
-    public IActionResult Index()
+    public async Task<IActionResult> Index()
     {
-        TempData["SoldPetsCount"] = _petStoreClient.GetSoldPetsCount().Result;
+        TempData["SoldPetsCount"] = await _petStoreClient.GetSoldPetsCountAsync();
         return View();
     }
     ...

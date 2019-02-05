@@ -8,7 +8,7 @@ namespace Samples.AspNetCoreMvc.ClientInjectedToStartup.PetStore
     {
         // Note: lets add interface methods we want to expose in our appliction via dependency 
 
-        public async Task<int> GetSoldPetsCount()
+        public async Task<int> GetSoldPetsCountAsync()
         {
             ICollection<Pet> soldPets = await this.FindPetsByStatusAsync(new[] { Anonymous.Sold });
             return soldPets.Count;
@@ -19,7 +19,7 @@ namespace Samples.AspNetCoreMvc.ClientInjectedToStartup.PetStore
     public interface IPetStoreClient
     {
         /// <summary>Returns number of all sold pets in the store.</summary>
-        Task<int> GetSoldPetsCount();
+        Task<int> GetSoldPetsCountAsync();
 
         // NOTE: you can also define here methods from generated Client partial class to expose them from interface.
     }

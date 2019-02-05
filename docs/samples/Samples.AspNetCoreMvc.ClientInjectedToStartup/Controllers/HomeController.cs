@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Samples.AspNetCoreMvc.ClientInjectedToStartup.Models;
 using Samples.AspNetCoreMvc.ClientInjectedToStartup.PetStore;
@@ -14,9 +15,9 @@ namespace Samples.AspNetCoreMvc.ClientInjectedToStartup.Controllers
             _petStoreClient = petStoreClient;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            TempData["SoldPetsCount"] = _petStoreClient.GetSoldPetsCount().Result;
+            TempData["SoldPetsCount"] = await _petStoreClient.GetSoldPetsCountAsync();
             return View();
         }
 
