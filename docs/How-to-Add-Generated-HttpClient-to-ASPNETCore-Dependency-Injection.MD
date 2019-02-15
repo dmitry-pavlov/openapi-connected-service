@@ -49,7 +49,7 @@ public void ConfigureServices(IServiceCollection services)
     services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 }
 ```
-4. In `Index` action in `HomeControler.cs` let's inject `` and pass the number of sold pets to the `View`:
+4. In `Index` action in `HomeControler.cs` let's inject `IPetStoreClient` and pass the number of sold pets to the `View`:
 ```csharp
 public class HomeController : Controller
 {
