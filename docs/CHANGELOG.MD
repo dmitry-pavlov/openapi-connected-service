@@ -7,9 +7,10 @@
 
 These are the changes to each version that has been released on the official Visual Studio extension gallery.
 
-## 1.2 `(2019-02-24)`
+## 1.1.2 `(2019-02-24)`
 
 - [x] Add support for Visual Studio 2019
+- [x] Update NSwag.Commands to version 12.0.14
 
 ## 1.1.1 `(2019-02-01)`
 
