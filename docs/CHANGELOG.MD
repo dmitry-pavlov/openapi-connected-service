@@ -1,11 +1,15 @@
 # Road map
 
-- [ ] Gather [feedback](https://github.com/dmitry-pavlov/openapi-connected-service/issues/new) on [`OpenAPI (Swagger API) Connected Service`](https://marketplace.visualstudio.com/items?itemName=dmitry-pavlov.OpenAPIConnectedService) extension for [`VS2017`](https://visualstudio.microsoft.com/vs/).
+- [ ] Gather [feedback](https://github.com/dmitry-pavlov/openapi-connected-service/issues/new) on [`OpenAPI (Swagger API) Connected Service`](https://marketplace.visualstudio.com/items?itemName=dmitry-pavlov.OpenAPIConnectedService) extension for [`Visual Studio 2017/2019`](https://visualstudio.microsoft.com/vs/).
 - [ ] Plan what further feature requests to implement
 
 # Change log
 
 These are the changes to each version that has been released on the official Visual Studio extension gallery.
+
+## 1.2 `(2019-02-24)`
+
+- [x] Add support for Visual Studio 2019
 
 ## 1.1.1 `(2019-02-01)`
 
