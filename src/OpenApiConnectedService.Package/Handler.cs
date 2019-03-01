@@ -37,11 +37,6 @@ namespace OpenApiConnectedService.Package
             return result;
         }
 
-        private async Task CheckingPrerequisitesAsync(ConnectedServiceHandlerContext context, Instance instance)
-        {
-           
-        }
-
         public override async Task<UpdateServiceInstanceResult> UpdateServiceInstanceAsync(ConnectedServiceHandlerContext context, CancellationToken cancellationToken)
         {
             var instance = (Instance) context.ServiceInstance;

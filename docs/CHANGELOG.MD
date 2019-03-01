@@ -1,15 +1,19 @@
 # Road map
 
-- [ ] Gather [feedback](https://github.com/dmitry-pavlov/openapi-connected-service/issues/new) on [`OpenAPI (Swagger API) Connected Service`](https://marketplace.visualstudio.com/items?itemName=dmitry-pavlov.OpenAPIConnectedService) extension for [`Visual Studio 2017/2019`](https://visualstudio.microsoft.com/vs/).
-- [ ] Plan what further feature requests to implement
+- [ ] Fix open [issues](https://github.com/dmitry-pavlov/openapi-connected-service/issues/)
+- [ ] Gather [feedback](https://github.com/dmitry-pavlov/openapi-connected-service/issues/new) on [`OpenAPI (Swagger API) Connected Service`](https://marketplace.visualstudio.com/items?itemName=dmitry-pavlov.OpenAPIConnectedService) extension for [`Visual Studio`](https://visualstudio.microsoft.com/vs/) and plan further features to implement
 
 # Change log
 
 These are the changes to each version that has been released on the official Visual Studio extension gallery.
 
+## 1.1.3 `(2019-03-01)`
+
+- [x] BUG: Could not load file or assembly 'Newtonsoft.Json, Version=11.0.0.0... [#29](https://github.com/dmitry-pavlov/openapi-connected-service/issues/29)
+
 ## 1.1.2 `(2019-02-24)`
 
-- [x] Add support for Visual Studio 2019
+- [x] Add support for Visual Studio 2019 (open issue [#31](https://github.com/dmitry-pavlov/openapi-connected-service/issues/31))
 - [x] Update NSwag.Commands to version 12.0.14
 
 ## 1.1.1 `(2019-02-01)`
