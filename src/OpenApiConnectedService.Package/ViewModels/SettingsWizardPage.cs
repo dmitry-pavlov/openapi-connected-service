@@ -10,17 +10,22 @@ namespace OpenApiConnectedService.Package.ViewModels
 {
     public class SettingsWizardPage : ConnectedServiceWizardPage
     {
-        private const string NswagStudioIsNotInstalled = "NSwagStudio is not installed";
-
         private readonly ConnectedServiceProviderContext _context;
 
         private readonly IDictionary<string, object> _metadata;
 
         private readonly string[] _propertyNames = {
-            nameof(NswagStudioStatus)
+            nameof(NswagStudioStatus), 
+            nameof(NswagStudioExePath)
         };
 
         public string NswagStudioStatus
+        {
+            get => GetProperty<string>();
+            set => SetProperty(value);
+        }
+
+        public string NswagStudioExePath
         {
             get => GetProperty<string>();
             set => SetProperty(value);
@@ -30,15 +35,16 @@ namespace OpenApiConnectedService.Package.ViewModels
         {
             _metadata = new Dictionary<string, object>
             {
-                {nameof(NswagStudioStatus), null}
+                {nameof(NswagStudioStatus), null},
+                {nameof(NswagStudioExePath), null}
             };
 
             _context = context;
 
-            // set up the configuration dialog
             Title = Constants.ExtensionName;
-            Description = "Check NSwagStudio status";
+            Description = "NSwagStudio status";
             Legend = "Settings";
+
             RefreshNswagStudioStatus();
 
             View = new Views.SettingsWizardPageView
@@ -63,13 +69,15 @@ namespace OpenApiConnectedService.Package.ViewModels
                     if (commandParts.Length == 2)
                     {
                         var exeFullPath = commandParts.First();
-                        NswagStudioStatus = exeFullPath;
+                        NswagStudioExePath = exeFullPath;
+                        NswagStudioStatus = $"NSwagStudio is already installed.";
                         return;
                     }
                 }
             }
 
-            NswagStudioStatus = NswagStudioIsNotInstalled;
+            NswagStudioExePath = null;
+            NswagStudioStatus = $"NSwagStudio is not installed yet.";
         }
 
         public override async Task OnPageEnteringAsync(WizardEnteringArgs args)
@@ -81,8 +89,6 @@ namespace OpenApiConnectedService.Package.ViewModels
         public override async Task<PageNavigationResult> OnPageLeavingAsync(WizardLeavingArgs args)
         {
             await _context.Logger.WriteMessageAsync(LoggerMessageCategory.Information, "On Page Leaving");
-
-
             return await base.OnPageLeavingAsync(args);
         }
 
