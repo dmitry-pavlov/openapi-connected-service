@@ -7,6 +7,11 @@
 
 These are the changes to each version that has been released on the official Visual Studio extension gallery.
 
+## 1.1.4 `(2019-03-09)`
+
+- [x] Updated NuGet dependencies
+- [x] Minor UI setting page tweaks
+
 ## 1.1.3 `(2019-03-01)`
 
 - [x] BUG: Could not load file or assembly 'Newtonsoft.Json, Version=11.0.0.0... [#29](https://github.com/dmitry-pavlov/openapi-connected-service/issues/29)
