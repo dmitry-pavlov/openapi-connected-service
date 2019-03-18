@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="OpenApiConnectedService.Package.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="ServiceName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">MyService</Value>
+    </Setting>
+    <Setting Name="ServiceUri" Type="System.String" Scope="User">
+      <Value Profile="(Default)">https://petstore.swagger.io/v2/swagger.json</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
