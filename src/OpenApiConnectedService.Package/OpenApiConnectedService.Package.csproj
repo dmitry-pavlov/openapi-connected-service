@@ -127,16 +127,16 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.VisualStudio.Shell.15.0">
-      <Version>15.9.28307</Version>
+      <Version>16.0.28729</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Shell.Interop">
       <Version>7.10.6072</Version>
     </PackageReference>
     <PackageReference Include="Newtonsoft.Json">
-      <Version>12.0.1</Version>
+      <Version>12.0.2</Version>
     </PackageReference>
     <PackageReference Include="NSwag.Commands">
-      <Version>12.0.15</Version>
+      <Version>12.2.5</Version>
     </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
