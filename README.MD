@@ -17,7 +17,7 @@ If your project target framework is `net461` you might need to add the following
   - [`System.Net.Http`](https://www.nuget.org/packages/System.Net.Http/)
   - [`System.Runtime.Serialization.Json`](https://www.nuget.org/packages/System.Runtime.Serialization.Json/)
 ## Can't open .nswag file in NSwagStudio
-  - If generated code corrupted, try to open `.nswag` file in [`NSwagStudio`](https://github.com/RSuter/NSwag/wiki/NSwagStudio) (Windows GUI for editing .*nswag files). 
+- If generated code corrupted, try to open `.nswag` file in [`NSwagStudio`](https://github.com/RSuter/NSwag/wiki/NSwagStudio) (Windows GUI for editing .*nswag files). 
 - If it doesn't open, try to create new `.nswag` file in [`NSwagStudio`](https://github.com/RSuter/NSwag/wiki/NSwagStudio) for the same API service link and check the differences.
 - If you found bug, please report it [here](https://github.com/dmitry-pavlov/openapi-connected-service/issues/new?title=BUG). Thank you in advance!
 
