@@ -7,6 +7,11 @@
 
 These are the changes to each version that has been released on the official Visual Studio extension gallery.
 
+## 1.2.1 `(2019-03-09)`
+
+- [x] Updated NuGet dependencies
+- [x] Attemp to fix [#31](https://github.com/dmitry-pavlov/openapi-connected-service/issues/31) - still open
+
 ## 1.1.4 `(2019-03-09)`
 
 - [x] Updated NuGet dependencies
