@@ -7,11 +7,6 @@
 
 These are the changes to each version that has been released on the official Visual Studio extension gallery.
 
-## 1.2.0 `(2019-05-08)`
-
-- [x] BUG: VS2019: The following references must be present before installation can Continue: Microsoft Connected Services [#31](https://github.com/dmitry-pavlov/openapi-connected-service/issues/31)
-- [x] Updated NuGet dependencies
-
 ## 1.1.4 `(2019-03-09)`
 
 - [x] Updated NuGet dependencies
