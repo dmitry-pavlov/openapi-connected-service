@@ -1,5 +1,7 @@
 [OpenAPI (Swagger) Connected Service](https://marketplace.visualstudio.com/items?itemName=dmitry-pavlov.OpenAPIConnectedService) is a Visual Studio extension to generate `C#` `HttpClient` code for `OpenAPI` (formerly [`Swagger API`](https://swagger.io/docs/specification/about/)) web service with [NSwag](https://github.com/RSuter/NSwag)
 
+Simply put, it is like `Add Service Reference` for `WCF` or `Add Web Reference` for `WSDL`, but for `JSON` `API`.
+
 # Getting Started
 
 Install from `Tools -> Extensions and Updates` menu inside Visual Studio or [download](https://marketplace.visualstudio.com/items?itemName=dmitry-pavlov.OpenAPIConnectedService)  as `VSIX` package from Visual Studio Marketplace
@@ -27,3 +29,5 @@ See the [changelog](docs/CHANGELOG.MD) for the further development plans and ver
 # Feedback
 Please feel free to [request a feature](https://github.com/dmitry-pavlov/openapi-connected-service/issues/new?title=FEATURE) or [report a bug](https://github.com/dmitry-pavlov/openapi-connected-service/issues/new?title=BUG).
 
+# Support Development
+Just consider [buying me a coffee](https://www.buymeacoffee.com/dmitrypavlov). Thank you for your support!
