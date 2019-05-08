@@ -27,7 +27,3 @@ See the [changelog](docs/CHANGELOG.MD) for the further development plans and ver
 # Feedback
 Please feel free to [request a feature](https://github.com/dmitry-pavlov/openapi-connected-service/issues/new?title=FEATURE) or [report a bug](https://github.com/dmitry-pavlov/openapi-connected-service/issues/new?title=BUG).
 
-# Thank me!
-If you like what I am doing and you would like to thank me, please consider [buying me a coffee](https://www.buymeacoffee.com/dmitrypavlov). 
-Thank you for your support!
-
