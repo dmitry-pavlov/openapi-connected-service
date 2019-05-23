@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
     <Metadata>
-        <Identity Id="DmitryPavlov.OpenApiConnectedService.13263952-1111-3333-2017-BA783BFD905A" Version="1.2.1" Language="en-US" Publisher="Dmitry Pavlov" />
+        <Identity Id="DmitryPavlov.OpenApiConnectedService.13263952-1111-3333-2017-BA783BFD905A" Version="1.2.2" Language="en-US" Publisher="Dmitry Pavlov" />
         <DisplayName>OpenAPI (Swagger) Connected Service</DisplayName>
         <Description>Connected service for Visual Studio to generate OpenAPI (Swagger) web service reference.</Description>
         <MoreInfo>https://github.com/dmitry-pavlov/openapi-connected-service</MoreInfo>
