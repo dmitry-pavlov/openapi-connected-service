@@ -1,5 +1,7 @@
 # How to add generated HttpClient to ASP.NET Core dependency injection
 
+[Read this post on Medium as well](https://medium.com/@dmitry.pavlov/how-to-add-generated-httpclient-to-asp-net-core-dependency-injection-right-way-fec21b3385f1)
+
 This `How-To` describes how to inject dependency to `HttpClient` you generated for [PetStore API](http://petstore.swagger.io/) with [OpenAPI (Swagger) Connected Service](https://marketplace.visualstudio.com/items?itemName=dmitry-pavlov.OpenAPIConnectedService) to `ASP.NET Core` application. To achieve this please follow the the steps below:
 The sample code is available in [Samples.AspNetCoreMvc.ClientInjectedToStartup](https://github.com/dmitry-pavlov/openapi-connected-service/tree/master/docs/samples/Samples.AspNetCoreMvc.ClientInjectedToStartup).
 
