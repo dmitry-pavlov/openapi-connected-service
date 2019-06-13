@@ -1,7 +1,7 @@
 # Road map
-
+- [ ] Swich to other extinsibility approach - see new project started [API Client Generation Tools for Visual Studio](https://github.com/dmitry-pavlov/api-client-generation-tools). Consider to support development - see the lovely ❤️ Sponsor button on new repo page. Your support is much appreciated!
 - [ ] Fix open [issues](https://github.com/dmitry-pavlov/openapi-connected-service/issues/)
-- [ ] Gather [feedback](https://github.com/dmitry-pavlov/openapi-connected-service/issues/new) on [`OpenAPI (Swagger API) Connected Service`](https://marketplace.visualstudio.com/items?itemName=dmitry-pavlov.OpenAPIConnectedService) extension for [`Visual Studio`](https://visualstudio.microsoft.com/vs/) and plan further features to implement
+- [x] Gather [feedback](https://github.com/dmitry-pavlov/openapi-connected-service/issues/new) on [`OpenAPI (Swagger API) Connected Service`](https://marketplace.visualstudio.com/items?itemName=dmitry-pavlov.OpenAPIConnectedService) extension for [`Visual Studio`](https://visualstudio.microsoft.com/vs/) and plan further features to implement
 
 # Change log
 
