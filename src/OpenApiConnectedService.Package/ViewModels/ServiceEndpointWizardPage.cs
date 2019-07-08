@@ -1,9 +1,12 @@
 ﻿using System;
+using System.CodeDom;
+using System.CodeDom.Compiler;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using Microsoft.VisualStudio.ConnectedServices;
+using OpenApiConnectedService.Package.Properties;
 
 namespace OpenApiConnectedService.Package.ViewModels
 {
@@ -44,8 +47,8 @@ namespace OpenApiConnectedService.Package.ViewModels
             Title = Constants.ExtensionName;
             Description = "Specify the service to add";
             Legend = "Service Endpoint";
-            ServiceName = "MyService";
-            ServiceUri = "https://petstore.swagger.io/v2/swagger.json";
+            ServiceName = Settings.Default.ServiceName;
+            ServiceUri = Settings.Default.ServiceUri;
 
             View = new Views.ServiceEndpointWizardPageView
             {
@@ -83,6 +86,16 @@ namespace OpenApiConnectedService.Package.ViewModels
         {
             if (string.IsNullOrEmpty(ServiceName)) return false;
             if (!Uri.TryCreate(ServiceUri, UriKind.Absolute, out Uri uri)) return false;
+
+            try
+            {
+                CodeGenerator.ValidateIdentifiers(new CodeNamespace(ServiceName));
+            }
+            catch(ArgumentException)
+            {
+                return false;
+            }
+
             return true;
         }
 
